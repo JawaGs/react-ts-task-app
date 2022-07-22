@@ -23,3 +23,20 @@
 .taskApp__navbar--logo{
   width: 4rem;
 }
+
+.taskApp__container--body{
+  display: flex !important;
+}
+
+.taskForm__body--inputsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.taskList__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 10px;
+}

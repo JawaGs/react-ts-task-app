@@ -2,15 +2,16 @@ import { Task } from "../interfaces/Task"
 import TaskCard from "./TaskCard"
 
 interface Props{
-    tasks: Task[]
+    tasks: Task[],
+    deleteTask: ( id:string ) => void
 }
 
-export default function TaskList({ tasks }:Props) {
+export default function TaskList({ tasks, deleteTask }:Props) {
     return (
-        <>
+        <div className="taskList__container" >
             { tasks.map( task =>(
-                <TaskCard task={ task } />
+                <TaskCard task={ task } deleteTask={ deleteTask } key={ task.id } />
             ) ) }
-        </>
+        </div>
     )
 }
