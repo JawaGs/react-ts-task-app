@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Container } from '@mui/material';
+import { useState } from 'react';
 import './App.css';
+import TaskList from './components/TaskList';
+import { Task } from './interfaces/Task';
+import  logo  from "./logo.svg"
 
-function App() {
+interface Props {
+  title?: string
+}
+
+
+
+export function App( { title }:Props ) {
+  const [tasks, setTasks] = useState<Task[]>([
+    {
+      id:1,
+      title: "aprender r",
+      description: "desca",
+      completed:false
+    }
+  ])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="taskApp__container">
+      <nav className='taskApp__navbar'>
+          <img src={ logo } alt="react logo" className='taskApp__navbar--logo' />
+          <h1 className='taskApp__header--title'>
+            { title }
+          </h1>
+      </nav>
+      <Container>
+          <TaskList tasks={ tasks } />
+      </Container>
+
     </div>
   );
 }
-
-export default App;
