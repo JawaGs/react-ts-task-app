@@ -10,7 +10,7 @@ interface Props{
 export default function TaskCard( { task, deleteTask }:Props ) {
     return (
         task.id !== ""?<div>
-        <Card sx={{ minWidth: 275 }}>
+        <Card sx={{ minWidth: 275, maxHeight: 275, minHeight: 275 }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     { task.title }
